@@ -4,13 +4,14 @@ import urllib2
 from scrape import *
 from iterate import *
 
+url = ""
 #How to download images
 f = open("test.gif", "wb")
-f.write(urllib2.urlopen("http://webhost.salford.ac.uk/images/university-of-salford-logo.gif").read())
+f.write(urllib2.urlopen(url).read())
 f.close()
 
 urlList = []
-site = urllib2.urlopen("http://www.cse.salford.ac.uk/physics/resources.php")
+site = urllib2.urlopen(url)
 html = site.read()
 
 scrape(html, urlList)
